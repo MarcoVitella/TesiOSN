@@ -17,7 +17,6 @@ import com.websystique.springmvc.model.User;
 @Repository("FriendshipRequestDao")
 public class FriendshipRequestDaoImpl extends AbstractDao<Integer, FriendshipRequest> implements FriendshipRequestDao{
 
-	@Override
 	public FriendshipRequest getRequest(Integer u1, Integer u2) {
 		Criteria crit = createEntityCriteria();
 		crit.add(Restrictions.eq("user_requestor",u1));
@@ -26,20 +25,17 @@ public class FriendshipRequestDaoImpl extends AbstractDao<Integer, FriendshipReq
 
 	}
 
-	@Override
 	public List<FriendshipRequest> getAllRequest(Integer u) {
 		Criteria crit = createEntityCriteria();
 		crit.add(Restrictions.eq("user_acceptor",u));
 		return (List<FriendshipRequest>)crit.list();
 	}
 
-	@Override
 	public void save(FriendshipRequest friend) {
 		persist(friend);
 
 	}
 
-	@Override
 	public void delete(Integer id_requestor, Integer id_acceptor) {
 		Criteria crit=createEntityCriteria();
 		crit.add(Restrictions.eq("user_requestor",id_requestor));

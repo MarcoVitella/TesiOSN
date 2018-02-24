@@ -18,22 +18,18 @@ public class FriendshipRequestServiceImpl implements FriendshipRequestService {
 	@Autowired
 	FriendshipRequestDao dao;
 
-	@Override
 	public FriendshipRequest getRequest(Integer u1, Integer u2) {
 		return (dao.getRequest(u1, u2));
 	}
 
-	@Override
 	public List<FriendshipRequest> getAllRequest(Integer u) {
 		return dao.getAllRequest(u);
 	}
 
-	@Override
 	public void save(FriendshipRequest friend) {
 		dao.save(friend);
 	}
 
-	@Override
 	public void delete(Integer id_requestor, Integer id_acceptor) {
 		dao.delete(id_requestor, id_acceptor);
 

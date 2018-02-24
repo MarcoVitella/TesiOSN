@@ -36,7 +36,6 @@ public class AlbumServiceImpl implements AlbumService{
 	}
 
 
-	@Override
 	public void save(Album album) {
 		dao.save(album);// TODO Auto-generated method stub
 

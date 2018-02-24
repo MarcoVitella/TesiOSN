@@ -13,13 +13,11 @@ public class SessionDaoImpl extends AbstractDao<Integer,SessionUser> implements 
 
 
 
-	@Override
 	public void saveSession(SessionUser u) {
 		persist(u);
 
 	}
 
-	@Override
 	public SessionUser getSessionUser(User u) {
 		Criteria crit=createEntityCriteria();
 		crit.add(Restrictions.eq("user", u));
@@ -28,7 +26,6 @@ public class SessionDaoImpl extends AbstractDao<Integer,SessionUser> implements 
 		return sessUser; 
 	}
 
-	@Override
 	public void deleteSession(User u) {
 		Criteria crit=createEntityCriteria();
 		crit.add(Restrictions.eq("user", u));

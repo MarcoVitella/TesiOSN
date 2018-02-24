@@ -24,7 +24,6 @@ public class SessionUserServiceImpl implements SessionUserService{
 	}
 
 
-	@Override
 	public void updateSession(User u, String s) {
 
 		SessionUser user=dao.getSessionUser(u);
@@ -35,14 +34,12 @@ public class SessionUserServiceImpl implements SessionUserService{
 	}
 
 
-	@Override
 	public SessionUser getSessionUser(User u) {
 		SessionUser sesUser=dao.getSessionUser(u);
 		return sesUser;
 	}
 
 
-	@Override
 	public void deleteSession(User u) {
 		dao.deleteSession(u);
 

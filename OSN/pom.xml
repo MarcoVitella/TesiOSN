@@ -6,47 +6,45 @@
 	<artifactId>OSN</artifactId>
 	<version>1.0.0</version>
 	<name>Spring4MVCAngularJSExample Maven Webapp</name>
-  <url>http://maven.apache.org</url>
+	<url>http://maven.apache.org</url>
 
 	<properties>
-	<maven.compiler.source>1.8</maven.compiler.source>
-   		<maven.compiler.target>1.8</maven.compiler.target>
-		<springframework.version>4.2.0.RELEASE</springframework.version>
-		<jackson.version>2.5.3</jackson.version>
-			<mysql.connector.version>5.1.31</mysql.connector.version>
-	
+		<springframework.version>4.3.1.RELEASE</springframework.version>
+		<jackson.version>2.7.5</jackson.version>
+		<mysql.connector.version>5.1.31</mysql.connector.version>
+		<mongodb.version>3.5.0</mongodb.version>
 	</properties>
 	<dependencies>
-	
-<!-- JSONObject -->
-<dependency>
-   		<groupId>org.json</groupId>
-   		<artifactId>json</artifactId>
-   		<version>20080701</version>
-	</dependency>
-	
-<dependency>
-<groupId>com.googlecode.json-simple</groupId>
-<artifactId>json-simple</artifactId>
-<version>1.1</version>
-  </dependency>
 
-<!-- Email -->
+		<!-- JSONObject -->
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20080701</version>
+		</dependency>
 
- <dependency>
-	    <groupId>javax.mail</groupId>
-	    <artifactId>mail</artifactId>
-	    <version>1.4.3</version>
-    </dependency>
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1</version>
+		</dependency>
+
+		<!-- Email -->
+
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.3</version>
+		</dependency>
 
 		<!-- Spring -->
-		
-<dependency>
-  <groupId>commons-codec</groupId>
-  <artifactId>commons-codec</artifactId>
-  <version>1.7</version>
-</dependency>
-	<dependency>
+
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.7</version>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
 			<version>${springframework.version}</version>
@@ -67,38 +65,46 @@
 			<version>${springframework.version}</version>
 		</dependency>
 		<dependency>
-    <groupId>org.springframework</groupId>
-    <artifactId>spring-orm</artifactId>
-    <version>${spring.version}</version>
-</dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
 			<version>${springframework.version}</version>
 		</dependency>
 
-<dependency>
-    <groupId>com.fasterxml.jackson.core</groupId>
-    <artifactId>jackson-core</artifactId>
-    <version>2.4.1</version>
-</dependency>
-<dependency>
-    <groupId>com.fasterxml.jackson.core</groupId>
-    <artifactId>jackson-databind</artifactId>
-    <version>2.4.1.1</version>
-</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
 
+		<!-- MongoDb -->
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongo-java-driver</artifactId>
+			<version>${mongodb.version}</version>
+		</dependency>
 
+		<dependency>
+			<groupId>com.clarifai.clarifai-api2</groupId>
+			<artifactId>core</artifactId>
+			<version>2.4.0</version>
+		</dependency>
 
-
-		
-		
-		  <!-- Hibernate -->
-       <dependency> <!-- Hibernate -->
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>4.1.3.Final</version>
-        </dependency>
+		<!-- Hibernate -->
+		<dependency> <!-- Hibernate -->
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>4.1.3.Final</version>
+		</dependency>
 
 		<!-- jsr303 validation -->
 		<dependency>
@@ -111,7 +117,7 @@
 			<artifactId>hibernate-validator</artifactId>
 			<version>5.1.3.Final</version>
 		</dependency>
-		
+
 		<!-- MySQL -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -120,25 +126,25 @@
 		</dependency>
 
 		<!-- Servlet+JSP+JSTL -->
-		
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
-			        <scope>provided</scope>
-			
+			<scope>provided</scope>
+
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-		
-<dependency>
+
+		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>javax.servlet.jsp-api</artifactId>
 			<version>2.3.1</version>
-			 <scope>provided</scope>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 
@@ -147,9 +153,18 @@
 		<pluginManagement>
 			<plugins>
 				<plugin>
+		            <groupId>org.apache.maven.plugins</groupId>
+		            <artifactId>maven-compiler-plugin</artifactId>
+		            <version>3.5.1</version>
+		            <configuration>
+		                <source>1.8</source>
+		                <target>1.8</target>
+		            </configuration>
+        		</plugin>
+				<plugin>
 					<groupId>org.apache.tomcat.maven</groupId>
-                <artifactId>tomcat7-maven-plugin</artifactId>
-                <version>2.2</version>
+					<artifactId>tomcat7-maven-plugin</artifactId>
+					<version>2.2</version>
 					<configuration>
 						<warSourceDirectory>src/main/webapp</warSourceDirectory>
 						<warName>OSN</warName>
@@ -161,4 +176,5 @@
 
 		<finalName>OSN</finalName>
 	</build>
+	<packaging>war</packaging>
 </project>
