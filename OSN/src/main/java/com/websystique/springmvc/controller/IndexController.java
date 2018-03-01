@@ -36,6 +36,11 @@ public class IndexController {
 	public String userView(){
 		return "userView";
 	}
+	
+	@RequestMapping(value="/searchEngine" ,method = RequestMethod.GET)
+	public String SearchEngine() {
+		return "searchEngine";
+	}
 
 	
 

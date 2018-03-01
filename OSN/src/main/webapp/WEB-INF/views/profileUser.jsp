@@ -269,9 +269,13 @@ height:300px;
         <h2 class="w3-text-grey w3-padding-16">
         <i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Photo Gallery
         </h2>
-    	    <a ng-href="searchEngine" href= "/searchEngine.jsp">
-        	SearchEngine 
-       		</a>
+        	<!-- Search Engine Button 
+    	    <button>
+	    	    <a ng-href="/OSN/searchEngine" href= "/searchEngine.jsp">
+	        		SearchEngine 
+	       		</a>
+       		</button> -->
+       		<input type="button" ng-click="ctrl.searchEngine()"  value="searchEngine" />
         <div class="w3-container">
          
           <hr>

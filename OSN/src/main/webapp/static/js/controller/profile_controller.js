@@ -757,9 +757,30 @@ App.controller('ProfileController',['$scope','$window','ProfileService',function
 		console.log(Lockr.get("id"))
 		$window.location.href=url+'/searchFriend/'+Lockr.get("id");
 	},
+	
+	
+	//REDIRECT TO SEARCH ENGINE PAGE
+	/*self.searchEngine=function(){
+		
+		Lockr.flush();
 
+		ProfileService.searchEngine()
+		.then(
+			function(data){						
+				$window.location.href=url+'/searchEngine';
+	
+			},function(errResponse){
+				console.error('Error in going to searh engine.');
+	
+			});
+	},*/
+	
+	self.searchEngine=function(){
+		console.log("redirecting to search engine");
+		$window.location.href=url + '/searchEngine';
+	},
 
-
+	
 	//LOGOUT DELETE SESSION
 	self.logout=function(){
 

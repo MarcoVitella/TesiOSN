@@ -39,6 +39,11 @@ App.config(['$routeProvider', '$compileProvider', function($routeProvider, $comp
 		templateUrl: 'WEB-INF/views/userView.jsp'
 
 	})
+	.when('/searchEngine',{
+		controller:'ProfileController',
+		templateUrl: 'WEB-INF/views/searchEngine.jsp'
+
+	})
 	
 
 	.otherwise({redirectTo:'/'});

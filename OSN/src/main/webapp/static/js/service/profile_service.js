@@ -238,6 +238,21 @@ var urlRMS='http://193.206.170.143/RMS';
 						return $q.reject(errResponse);
 					});
 		},
+		
+		//SEARCH ENGINE
+		searchEngine:function(){
+			console.log("going to search engine");
+			return $http.post(path+'/searchEngine').then(
+
+					function(response){
+
+						return response.data;
+					},
+					function(errResponse){
+						console.error('Error in going to searchEngine');
+						return $q.reject(errResponse);
+					});
+		},
 
 		getLoginMessage:function(protocol){
 			return $http({

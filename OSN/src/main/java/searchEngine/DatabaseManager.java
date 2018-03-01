@@ -30,7 +30,7 @@ public class DatabaseManager{
 	//mongoClient singleton: solo un'istanza per volta
 	public static MongoClient getInstance(){
 		if(mongoClient == null) {
-			mongoClient = new MongoClient("193.206.170.174" , 27017);
+			mongoClient = new MongoClient("localhost" , 27017);
 	      }
 	      return mongoClient;
 	}

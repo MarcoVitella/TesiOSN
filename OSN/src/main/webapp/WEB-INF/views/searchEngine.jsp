@@ -5,14 +5,14 @@
 		<meta name="viewport" content="width=device-width">
 		<title>SearchEngine Form</title>
     	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
-		<link rel="stylesheet" href="OSN/src/main/webapp/static/css/searchEngine.css">
+		<link rel="stylesheet" href="static/css/searchEngine.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
-		<script src="OSN/src/webapp/static/js/searchEngine.js"></script>
+		<script src="static/js/searchEngine.js"></script>
 	</head>
 	<body>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		  <a class="navbar-brand" href=""><b>Image Search Engine</b></a>
+		  <a class="navbar-brand"><b>Image Search Engine</b></a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
